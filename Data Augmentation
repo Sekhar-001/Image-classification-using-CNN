@@ -1,0 +1,11 @@
+batch_size = 32
+
+data_generator = ImageDataGenerator(
+        width_shift_range=0.1,
+        height_shift_range=0.1,
+        horizontal_flip=True
+)
+
+train_generator = data_generator.flow(X_train, y_cat_train, batch_size)
+
+steps_per_epoch = X_train.shape[0] // batch_size
