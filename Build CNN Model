@@ -1,0 +1,41 @@
+INPUT_SHAPE = (32,32,3)
+KERNEL_SIZE = (3,3)
+
+model = Sequential()
+
+model.add(Conv2D(32, KERNEL_SIZE, activation='relu', padding='same', input_shape=INPUT_SHAPE))
+model.add(BatchNormalization())
+
+model.add(Conv2D(32, KERNEL_SIZE, activation='relu', padding='same'))
+model.add(BatchNormalization())
+
+model.add(MaxPool2D(pool_size=(2,2)))
+model.add(Dropout(0.25))
+
+
+model.add(Conv2D(64, KERNEL_SIZE, activation='relu', padding='same'))
+model.add(BatchNormalization())
+
+model.add(Conv2D(64, KERNEL_SIZE, activation='relu', padding='same'))
+model.add(BatchNormalization())
+
+model.add(MaxPool2D(pool_size=(2,2)))
+model.add(Dropout(0.25))
+
+
+model.add(Conv2D(128, KERNEL_SIZE, activation='relu', padding='same'))
+model.add(BatchNormalization())
+
+model.add(Conv2D(128, KERNEL_SIZE, activation='relu', padding='same'))
+model.add(BatchNormalization())
+
+model.add(MaxPool2D(pool_size=(2,2)))
+model.add(Dropout(0.25))
+
+
+model.add(Flatten())
+
+model.add(Dense(128, activation='relu'))
+model.add(Dropout(0.25))
+
+model.add(Dense(10, activation='softmax'))
