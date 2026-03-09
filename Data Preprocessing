@@ -1,0 +1,7 @@
+# Normalize images
+X_train = X_train / 255.0
+X_test = X_test / 255.0
+
+# One hot encoding
+y_cat_train = to_categorical(y_train, 10)
+y_cat_test = to_categorical(y_test, 10)
