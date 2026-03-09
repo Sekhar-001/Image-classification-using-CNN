@@ -1,0 +1,18 @@
+W_grid = 10
+L_grid = 10
+
+fig, axes = plt.subplots(L_grid, W_grid, figsize=(17,17))
+axes = axes.ravel()
+
+n_train = len(X_train)
+
+for i in np.arange(0, W_grid * L_grid):
+
+    index = np.random.randint(0, n_train)
+
+    axes[i].imshow(X_train[index])
+    label_index = int(y_train[index])
+    axes[i].set_title(labels[label_index], fontsize=8)
+    axes[i].axis('off')
+
+plt.subplots_adjust(hspace=0.4)
