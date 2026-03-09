@@ -1,0 +1,9 @@
+my_image = X_test[100]
+
+plt.imshow(my_image)
+
+print("Actual label:", y_test[100])
+
+pred = np.argmax(model.predict(my_image.reshape(1,32,32,3)))
+
+print("Predicted label:", pred)
