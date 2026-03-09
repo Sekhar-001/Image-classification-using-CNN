@@ -1,0 +1,6 @@
+r = model.fit(
+        train_generator,
+        epochs=10,
+        steps_per_epoch=steps_per_epoch,
+        validation_data=(X_test, y_cat_test)
+)
