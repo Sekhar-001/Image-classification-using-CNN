@@ -1,0 +1,6 @@
+classes_name = ['Airplane','Automobile','Bird','Cat','Deer',
+                'Dog','Frog','Horse','Ship','Truck']
+
+classes, counts = np.unique(y_train, return_counts=True)
+plt.barh(classes_name, counts)
+plt.title('Class distribution in training set')
